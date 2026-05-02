@@ -42,12 +42,14 @@ function DefaultErrorComponent({ error, reset }: { error: Error; reset: () => vo
           >
             Try again
           </button>
-          <a
-            href="/elite-gym-system/"
+          <button
+            onClick={() => {
+              window.location.href = import.meta.env.BASE_URL;
+            }}
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
             Go home
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -59,7 +61,7 @@ export const getRouter = () => {
     routeTree,
     context: {},
     scrollRestoration: true,
-    basepath: "/elite-gym-system/",
+    basepath: import.meta.env.BASE_URL,
     defaultPreloadStaleTime: 0,
     defaultErrorComponent: DefaultErrorComponent,
   });
