@@ -36,7 +36,7 @@ export function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={`text-sm font-semibold uppercase tracking-wider transition-colors hover:text-primary ${
-                  location.pathname === link.to ? "text-primary" : "text-muted-foreground"
+                  location.pathname === (link.to === "/" ? "/elite-gym-system/" : `/elite-gym-system${link.to}`) ? "text-primary" : "text-muted-foreground"
                 }`}
               >
                 {link.label}
@@ -79,7 +79,7 @@ export function Navbar() {
                 to={link.to}
                 onClick={() => setIsOpen(false)}
                 className={`text-lg font-semibold uppercase tracking-wider ${
-                  location.pathname === link.to ? "text-primary" : "text-foreground"
+                  location.pathname === (link.to === "/" ? "/elite-gym-system/" : `/elite-gym-system${link.to}`) ? "text-primary" : "text-foreground"
                 }`}
               >
                 {link.label}
